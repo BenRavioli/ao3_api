@@ -95,7 +95,7 @@ class Search:
             self.any_field, self.title, self.author, self.single_chapter,
             self.word_count, self.language, self.fandoms, self.rating, self.hits,
             self.kudos, self.crossovers, self.bookmarks, self.excluded_tags, self.comments, self.completion_status, self.page,
-            self.sort_column, self.sort_direction, self.revised_at, self.session,
+            self.sort_column, self.sort_direction, self.revised_at, self.date_from, self.date_to, self.session,
             self.characters, self.relationships, self.tags)
 
         results = soup.find("ol", {"class": ("work", "index", "group")})
