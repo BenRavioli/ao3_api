@@ -48,6 +48,8 @@ class Search:
         sort_column="",
         sort_direction="",
         revised_at="",
+        date_from="",
+        date_to="",
         characters="",
         relationships="",
         tags="",
@@ -75,7 +77,8 @@ class Search:
         self.sort_column = sort_column
         self.sort_direction = sort_direction
         self.revised_at = revised_at
-        
+        self.date_from = date_from
+        self.date_to = date_to
         self.session = session
 
         self.results = None
@@ -136,6 +139,8 @@ def search(
     sort_column="",
     sort_direction="",
     revised_at="",
+    date_from="",
+    date_to="",
     session=None,
     characters="",
     relationships="",
@@ -214,7 +219,11 @@ def search(
         query.add_field(f"work_search[sort_direction]={sort_direction}")
     if revised_at != "":
         query.add_field(f"work_search[revised_at]={revised_at}")
-
+    if date_from != "":
+        query.add_field(f"work_search[date_from]={date_from}")
+    if date_to != "":
+        query.add_field(f"work_search[date_to]={date_to}")
+        
     url = f"https://archiveofourown.org/works/search?{query.string}"
 
     if session is None:
