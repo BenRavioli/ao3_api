@@ -7,7 +7,7 @@ with open("requirements.txt", "r") as fh:
     requires = [line for line in fh.read().splitlines() if line != ""]
 
 setuptools.setup(
-    name="ao3-api",
+    name="ao3-api-date-fields",
     version="2.3.0",
     author="Francisco Rodrigues",
     author_email="francisco.rodrigues0908@gmail.com",
